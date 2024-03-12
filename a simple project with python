@@ -1,0 +1,141 @@
+###################################################33333333333333333333333333##3################################
+class Concert:
+
+    def __init__(self):
+
+        self.places = ["Al Alamain", "Sharm Elshaikh", "Alexandria"]
+        self.ticket_prices = [2000, 2500, 1000]
+
+Concert_One = Concert()
+
+class Offer(Concert):
+
+    def __init__(self):
+
+        Concert.__init__(self)
+
+        print("There Are Three Concerts Today.")
+
+    def counting(self):
+    
+            print("1- In (Al Alamain) (The Price Of The Ticket Is : 2000)")
+            print("2- In (Sharm Elshaikh) (The Price Of The Ticket Is : 2500)")
+            print("3- In (Alexandria) (The Price Of The Ticket Is : 1000)")
+
+Offer_One = Offer()
+
+def Input_place_ticket():
+
+    place = input("Choose The Number Of Ticket Do You Want To Buy? ")
+
+    if place == "1":
+
+        print(f"You Welcome In {Concert_One.places[0]}")
+
+        ticket = int(input("enter your money to buy the ticket : "))
+
+        if ticket == Concert_One.ticket_prices[0]:
+
+            print(f"You Paid {ticket}")
+            print(f"We Sent The Ticket")
+            print("Done")
+        
+        elif ticket > Concert_One.ticket_prices[0]:
+            
+            print(f"You Paid {ticket}")
+            ticket -= Concert_One.ticket_prices[0]
+            print(f"Your Last Money Is: {ticket}")
+            print("We Sent The Ticket")
+            print("Well Done")
+
+        elif ticket < Concert_One.ticket_prices[0]:
+
+            print(f"Sorry, You Paid {ticket} And The Price Of The Ticket Is: {Concert_One.ticket_prices[0]}")
+
+            Offer.counting()
+
+            Input_place_ticket()
+        
+        else:
+
+            print(f"Sorry, The Price Is: {Concert_One.ticket_prices[0]}")
+
+            Offer.counting()
+
+            Input_place_ticket()
+    
+    elif place == "2":
+
+        print(f"You Welcome In {Concert_One.places[1]}")
+        ticket = int(input("enter your money to pay the ticket: "))
+
+        if ticket == Concert_One.ticket_prices[1]:
+
+            print(f"You Paid {ticket}")
+            print(f"We Sent The Ticket")
+            print("Well Done")
+        
+        elif ticket > Concert_One.ticket_prices[1]:
+
+            print(f"You Paid {ticket}")
+            ticket -= Concert_One.ticket_prices[1]
+            print(f"Your Last Money Is: {ticket}")
+            print("We Sent The Ticket")
+            print("Well Done")
+
+        elif ticket < Concert_One.ticket_prices[1]:
+
+            print(f"Sorry, You Paid {ticket} And The Price Of The Ticket Is: {Concert_One.ticket_prices[1]}")
+
+            Offer.counting()
+
+            Input_place_ticket()
+
+        else:
+
+            print(f"Sorry, The Price Is: {Concert_One.ticket_prices[1]}")
+
+            Offer.counting()
+
+            Input_place_ticket()
+
+    elif place == "3":
+
+        print(f"You Welcome In {Concert_One.places[2]}")
+        ticket = int(input("enter your money to pay the ticket: "))
+        
+        if ticket == Concert_One.ticket_prices[2]:
+
+            print(f"You Paid {ticket}")
+            print(f"We Sent The Ticket")
+            print("Well Done")
+
+        elif ticket > Concert_One.ticket_prices[2]:
+
+            print(f"You Paid {ticket}")
+            ticket -= Concert_One.ticket_prices[2]
+            print(f"Your Last Money Is: {ticket}")
+            print("We Sent The Ticket")
+            print("Well Done")
+
+        elif ticket < Concert_One.ticket_prices[2]:
+
+            print(f"Sorry, You Paid {ticket} And The Price Of The Ticket Is: {Concert_One.ticket_prices[2]}")
+
+            Offer.counting()
+
+            Input_place_ticket()
+    
+    else:
+
+        print("Sorry you have to choose (1/2/3) ")
+        print("#"*50)
+        Offer_One
+        Offer_One.counting()
+        Input_place_ticket()
+
+Offer_One
+Offer_One.counting()
+Input_place_ticket()
+input("press enter to exit...")
+###############################################################################################################
